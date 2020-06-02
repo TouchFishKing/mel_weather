@@ -13,5 +13,5 @@ def logarithmic(time, data)
   end
   b = (time.length * sum_of_ylnx - sum_of_y * sum_of_lnx) / (time.length * sum_of_lnx2 - sum_of_lnx * sum_of_lnx)
   a = (sum_of_y - b * sum_of_lnx) / time.length
-  p "#{b}ln(x) + #{a}"
+  "#{b}ln(x) + #{a}"
 end
