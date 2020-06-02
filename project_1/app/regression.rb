@@ -1,5 +1,6 @@
 require 'csv'
 require_relative 'linear'
+require_relative 'logarithmic'
 
 def regression
   input = ARGV[0]
