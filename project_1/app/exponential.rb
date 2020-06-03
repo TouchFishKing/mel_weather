@@ -15,5 +15,5 @@ def exponential(time, data)
   end
   a = (sum_of_x2y * sum_of_ylny - sum_of_xy * sum_of_xylny) / (sum_of_y * sum_of_x2y - sum_of_xy * sum_of_xy)
   b = (sum_of_y * sum_of_xylny - sum_of_xy * sum_of_ylny) / (sum_of_y * sum_of_x2y - sum_of_xy * sum_of_xy)
-  "#{Math.exp(a)}e^#{b}x"
+  "#{a}e^(#{b})x"
 end
