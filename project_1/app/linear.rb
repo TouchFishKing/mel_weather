@@ -15,5 +15,5 @@ def linear(time, data)
   end
   a = (sum_of_y * sum_of_x2 - sum_of_x * sum_of_xy) / (time.length * sum_of_x2 - sum_of_x * sum_of_x)
   b = (time.length * sum_of_xy - sum_of_x * sum_of_y) / (time.length * sum_of_x2 - sum_of_x * sum_of_x)
-  "#{b}x + #{a}"
+  "#{b.round(2)}x + #{a.round(2)}"
 end
