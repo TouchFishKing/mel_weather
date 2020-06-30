@@ -1,19 +1,18 @@
 def exponential(time, data)
   # TODO
-  sum_of_x2y = 0
-  sum_of_ylny = 0
-  sum_of_xy = 0
-  sum_of_xylny = 0
-  sum_of_y = 0
+  sum_of_lny = 0
+  sum_of_x2 = 0
+  sum_of_x = 0
+  sum_of_xlny = 0
   n = 0
   time.each do |x|
-    sum_of_x2y += x * x * data[n]
-    sum_of_ylny += data[n] * Math.log(data[n])
-    sum_of_xy += x * data[n]
-    sum_of_xylny += x * data[n] * Math.log(data[n])
-    sum_of_y += data[n]
+    sum_of_lny += Math.log(data[n])
+    sum_of_x2 += x**2
+    sum_of_x += x
+    sum_of_xlny += x * Math.log(data[n])
+    n += 1
   end
-  a = (sum_of_x2y * sum_of_ylny - sum_of_xy * sum_of_xylny) / (sum_of_y * sum_of_x2y - sum_of_xy * sum_of_xy)
-  b = (sum_of_y * sum_of_xylny - sum_of_xy * sum_of_ylny) / (sum_of_y * sum_of_x2y - sum_of_xy * sum_of_xy)
-  "#{a}e^(#{b})x"
+  a = Math::E**((sum_of_lny * sum_of_x2 - sum_of_x * sum_of_xlny) / (time.size * sum_of_x2 - sum_of_x**2))
+  b = (time.size * sum_of_xlny - sum_of_x * sum_of_lny) / (time.size * sum_of_x2 - sum_of_x**2)
+  "#{a.round(2)}e^(#{b.round(2)})x"
 end
