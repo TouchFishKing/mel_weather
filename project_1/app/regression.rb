@@ -2,6 +2,7 @@ require 'csv'
 require_relative 'linear'
 require_relative 'logarithmic'
 require_relative 'exponential'
+require_relative 'polynomial'
 
 require 'byebug'
 
